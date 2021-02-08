@@ -76,4 +76,4 @@ The fixtures use a `source_image_project` that will fail once in MCCP-Live due t
 | tags | Tags that will be associated with instance(s) |
 | template | The entire template resource that was created. |
 
-<!-- END OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
+<!-- END OF PRE-COMMIT-TERRAFORM DOCS HOOK --> 
