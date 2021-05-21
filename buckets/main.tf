@@ -82,7 +82,7 @@ resource "google_storage_bucket" "bucket" {
     }
   }
 
-}
+} 
 
 resource "google_storage_bucket_iam_member" "members" {
   for_each = var.enabled ? {
