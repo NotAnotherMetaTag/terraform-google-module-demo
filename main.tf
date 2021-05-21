@@ -1,18 +1,18 @@
 data "google_storage_bucket_object_content" "buckets" {
-  name = "data.json"
+  name   = "data.json"
   bucket = "remotejsonimport-test-eclark"
 }
 
 locals {
-  json_data = jsondecode(data.google_storage_bucket_object_content.buckets.content).buckets
+  json_data = jsondecode(data.google_storage_bucket_object_content.buckets.content)
 
-  // initiatives
   buckets = flatten([
     for bucket in local.json_data.buckets :
     {
-      id                 = bucket.id
-      org                = bucket.org
-      project_id         = bucket.project_id
+      id          = bucket.id
+      name        = bucket.name //this is used for logging, not for the resource name
+      org         = bucket.org
+      project_id  = bucket.project_id
       data_source = bucket.data_source
     }
   ])
